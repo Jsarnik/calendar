@@ -1,0 +1,22 @@
+﻿
+.pos0, .pos1, .pos2{
+left: 130px;
+}
+
+.pos0{
+top:0px;
+}
+.pos1{
+top:50px;
+}
+.pos2{
+top:100px;
+}
+
+#tool-tip{
+position:absolute;
+    background-color:#F9FFCD;
+    border:solid 1px #ccc;
+    left:20px;
+    z-index:100;
+}

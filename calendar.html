@@ -1,0 +1,48 @@
+<html>
+<head>
+<link href="styles/calendar.css" rel="stylesheet" type="text/css" />
+<link href="styles/custom.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="js/calendar.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    var tip = "";
+
+    $(document).ready(function() {
+        $('.filterDate').mouseover(function() {
+            var option = parseInt($(this).attr('data-option'));
+            switch (option) {
+                case 0:
+                    tip = "click to see an example of a calendar showing all dates.";
+                    $('#tool-tip').html(tip).show().css('top', '30px');
+                    break;
+                case 1:
+                    tip = "click to see an example of a calendar showing all past dates.";
+                    $('#tool-tip').html(tip).show().css('top', '80px');
+                    break;
+                case 2:
+                    tip = "click to see an example of a calendar showing all future dates.";
+                    $('#tool-tip').html(tip).show().css('top', '130px');
+                    break;
+            }
+        });
+        $('.filterDate').mouseout(function() {
+            $('#tool-tip').hide()
+        });
+        $('#filterDate1').click();
+    });
+
+</script>
+</head>
+<body style="height:500px;">
+                <div id="tool-tip"></div>
+				<div class="filterDate filterButtons" id="filterDate1" data-option="0"></div><br/><br/>
+				<div class="filterDate filterButtons" id="filterDate2" data-option="1"></div><br/><br/>
+				<div class="filterDate filterButtons" id="filterDate3" data-option="2"></div>
+                <div id="calendar">
+                    <div id="calendarBody"></div>                    
+                    <div id="previousMonth" onclick="navCalendar(true);"><</div>
+                    <div id="nextMonth" onclick="navCalendar(false);">></div>
+                </div>  
+</body>
+</html>
